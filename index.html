@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Songlo Home Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran|Maven+Pro|Quicksand|Roboto+Mono|Ubuntu&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -18,7 +19,6 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"
   ></script>
-  <script src="https://apis.google.com/js/client.js?onload=init"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
     integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk="
@@ -34,11 +34,12 @@
         <div class="col-md-12">
           <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Get the low down on that artist</h1>
+              <h1 class="display-4">Get the lo down on that artist</h1>
               <p class="lead">Search for a song or artist</p>
+              <div class="row justify-content-md-center">
               <form class="form-inline">
-                <div class="form-group mx-sm-12 mb-2 search-box">
-                  <label for="searchinput" class="sr-only"></label>
+                <div class="form-group mb-2 search-box">
+                  <label for="searchinput" class="col-md-4"></label>
                   <input
                     type="text"
                     class="form-control"
@@ -46,10 +47,9 @@
                     placeholder="Search here"
                   />
                 </div>
-                <button type="submit" class="btn btn-primary mb-2" id="submit">
-                  Search
-                </button>
+                <input type="submit" class="btn btn-primary mb-2" id="submit" value="Search">
               </form>
+              </div>
             </div>
           </div>
         </div>
@@ -72,5 +72,6 @@
       </div>
     </div>
   </body>
-  <link rel="stylesheet" href="./assets/javascript/app.js" />
+  <link rel="text/javascript" href="./assets/javascript/app.js" />
+  <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </html>

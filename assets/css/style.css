@@ -1,5 +1,21 @@
+/* Available Fonts through Google Fonts
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Catamaran', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+
 .jumbotron {
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color:rgb(255, 0, 140);
+    background-image: url(../images/concert-venue.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 140%; 
+    background-color: #582C07; /* Used if the image is unavailable */
+    z-index:800;
 }
 
 .search-box {
