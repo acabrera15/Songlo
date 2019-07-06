@@ -31,25 +31,84 @@
 //     });
 //   }
 
-// http://api.musixmatch.com/ws/1.1/track.search?q_artist=justinbieber&page_size=3&page=1&s_track_rating=desc&apikey=04e49b29533147d52143a4ef842fa260
+// http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=5&apikey=04e49b29533147d52143a4ef842fa260
 
 $(document).ready(function() {
-  getTopTenSongs("dsa");
+  getTopTenSongs();
+  getTopArtists();
 });
 
-let getTopTenSongs = function(band) {
-  const APIKey = "04e49b29533147d52143a4ef842fa260";
-  let URL = "https://api.musixmatch.com/ws/1.1/track.search?q_artist=justin%20bieber&page_size=3&page=1&s_track_rating=desc&apikey=04e49b29533147d52143a4ef842fa260";
-  console.log(URL)
-
+let getTopTenSongs = function() {
   $.ajax({
-    url: URL,
-    method: "GET"
-  })
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
+    type: "GET",
+    data: {
+      apikey: "04e49b29533147d52143a4ef842fa260",
+      chart_name: "top",
+      page: "1",
+      page_size: "10",
+      format: "jsonp",
+      callback: "jsonp_callback"
+    },
+    url: "https://api.musixmatch.com/ws/1.1/chart.tracks.get",
+    dataType: "jsonp",
+    jsonpCallback: "jsonp_callback",
+    contentType: "application/json",
+    success: function(data) {
+      $("#popular-songs").empty();
+      for (var i = 0; i < 10; i++) {
+        const trackObj = data.message.body.track_list[i].track;
+        const trackName = trackObj.track_name;
+        const trackArtist = trackObj.artist_name;
+
+        console.log(trackName);
+        console.log(trackArtist);
+        console.log("=========================");
+
+        $(
+          `<a href="#" class="list-group-item list-group-item-action popular-list">${trackName}<div class='popular-song-artist'>by ${trackArtist}</div</a>`
+        ).appendTo("#popular-songs");
+      }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    }
+  });
+};
+
+let getTopArtists = function() {
+  $.ajax({
+    type: "GET",
+    data: {
+      apikey: "04e49b29533147d52143a4ef842fa260",
+      chart_name: "top",
+      page: "1",
+      page_size: "10",
+      format: "jsonp",
+      callback: "jsonp_callback"
+    },
+    url: "https://api.musixmatch.com/ws/1.1/chart.artists.get",
+    dataType: "jsonp",
+    jsonpCallback: "jsonp_callback",
+    contentType: "application/json",
+    success: function(data) {
+      $('#popular-artists').empty();
+      for (var i = 0; i < 10; i++) {
+        const artistObj = data.message.body.artist_list[i].artist;
+        const artist = artistObj.artist_name;
+        console.log(artist);
+        console.log("----------------");
+
+        $(
+          `<a href="#" class="list-group-item list-group-item-action popular-list">${artist}</a>`
+        ).appendTo("#popular-artists");
+      }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR);
+      console.log(textStatus);
+      console.log(errorThrown);
+    }
+  });
 };
