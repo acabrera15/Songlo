@@ -26,6 +26,7 @@ font-family: 'Roboto Mono', monospace; */
 .search-box {
     text-align: center;
 }
+<<<<<<< HEAD
 
 .fa-briefcase {
     margin-right:5px;
@@ -44,3 +45,5 @@ border:none;
     font-size:3em;
 }
 
+=======
+>>>>>>> e9296a54f83b3b6ae4103abb986fc8669795f81c
