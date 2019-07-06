@@ -65,7 +65,7 @@ let getTopTenSongs = function() {
         console.log("=========================");
 
         $(
-          `<a href="#" class="list-group-item list-group-item-action popular-list">${trackName}<div class='popular-song-artist'>by ${trackArtist}</div</a>`
+          `<a href="./profile.html" class="list-group-item list-group-item-action popular-list">${trackName}<div class='popular-song-artist'>by ${trackArtist}</div</a>`
         ).appendTo("#popular-songs");
       }
     },
@@ -101,7 +101,7 @@ let getTopArtists = function() {
         console.log("----------------");
 
         $(
-          `<a href="#" class="list-group-item list-group-item-action popular-list">${artist}</a>`
+          `<a href="./profile.html" class="list-group-item list-group-item-action popular-list">${artist}</a>`
         ).appendTo("#popular-artists");
       }
     },
