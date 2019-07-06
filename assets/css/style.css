@@ -18,6 +18,29 @@ font-family: 'Roboto Mono', monospace; */
     z-index:800;
 }
 
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+}
+
 .search-box {
     text-align: center;
 }
+
+.fa-briefcase {
+    margin-right:5px;
+}
+
+.list-group-item {
+background-color:#D9D9D9;
+border:none;
+}
+
+.social-icon {
+    text-align:center;
+}
+
+.social-icon:hover {
+    font-size:3em;
+}
+
