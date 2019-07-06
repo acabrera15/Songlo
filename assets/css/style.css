@@ -18,6 +18,15 @@ font-family: 'Roboto Mono', monospace; */
     z-index:800;
 }
 
+.btn-primary {
+    background-color:#A263D6;
+    border-color:#582C07;
+}
+
+.btn-primary:hover {
+    
+}
+
 .container-fluid {
     padding-right:0;
     padding-left:0;
@@ -26,24 +35,54 @@ font-family: 'Roboto Mono', monospace; */
 .search-box {
     text-align: center;
 }
-<<<<<<< HEAD
 
 .fa-briefcase {
     margin-right:5px;
 }
 
+.list-group {
+    margin-bottom:20px;
+}
+
 .list-group-item {
-background-color:#D9D9D9;
-border:none;
+    background-color:transparent;
+    border:none;
+    color:white;
+}
+
+.list-group-item.active {
+    background-color:transparent;
+    color:white;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:white;
+    text-align:center;
 }
 
 .social-icon {
     text-align:center;
+    color:white;
 }
 
 .social-icon:hover {
-    font-size:3em;
+    /* font-size:3em; */
+    color:orange;
 }
 
-=======
->>>>>>> e9296a54f83b3b6ae4103abb986fc8669795f81c
+.footer {
+    background-color: #402130;
+    padding-top:10px;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background-color:transparent;
+    color:orange;
+}
+
+/* .popular-artists {
+    border-right-style:solid;
+    border-right-color:white;
+    border-right-width:1px;
+} */
+
+
