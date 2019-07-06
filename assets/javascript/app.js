@@ -39,8 +39,8 @@ $(document).ready(function() {
 
 let getTopTenSongs = function(band) {
   const APIKey = "04e49b29533147d52143a4ef842fa260";
-  let URL = "http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin%20bieber&page_size=3&page=1&s_track_rating=desc&apikey=04e49b29533147d52143a4ef842fa260";
-  console.log(URL+ APIKey)
+  let URL = "https://api.musixmatch.com/ws/1.1/track.search?q_artist=justin%20bieber&page_size=3&page=1&s_track_rating=desc&apikey=04e49b29533147d52143a4ef842fa260";
+  console.log(URL)
 
   $.ajax({
     url: URL,
