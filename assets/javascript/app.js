@@ -38,6 +38,7 @@ $(document).ready(function() {
   getTopArtists();
 });
 
+
 let getTopTenSongs = function() {
   $.ajax({
     type: "GET",
@@ -54,18 +55,21 @@ let getTopTenSongs = function() {
     jsonpCallback: "jsonp_callback",
     contentType: "application/json",
     success: function(data) {
+      console.log(data);
       $("#popular-songs").empty();
       for (var i = 0; i < 10; i++) {
         const trackObj = data.message.body.track_list[i].track;
         const trackName = trackObj.track_name;
         const trackArtist = trackObj.artist_name;
+        const trackArtistId = trackObj.artist_id;
 
         // console.log(trackName);
         // console.log(trackArtist);
         // console.log("=========================");
 
         $(
-          `<a href="./profile.html" class="list-group-item list-group-item-action popular-list">${trackName}<div class='popular-song-artist'>by ${trackArtist}</div</a>`
+          `<a href="./profile.html?artist=${trackArtist}&artistId=${trackArtistId}&song=${trackName}" 
+          class="list-group-item list-group-item-action popular-list">${trackName}<div class='popular-song-artist'>by ${trackArtist}</div</a>`
         ).appendTo("#popular-songs");
       }
     },
@@ -93,6 +97,7 @@ let getTopArtists = function() {
     jsonpCallback: "jsonp_callback",
     contentType: "application/json",
     success: function(data) {
+      console.log(data);
       $('#popular-artists').empty();
       for (var i = 0; i < 10; i++) {
         const artistObj = data.message.body.artist_list[i].artist;
@@ -101,7 +106,7 @@ let getTopArtists = function() {
         // console.log("----------------");
 
         $(
-          `<a href="./profile.html" class="list-group-item list-group-item-action popular-list">${artist}</a>`
+          `<a href="./profile.html?artist=${artist}" class="list-group-item list-group-item-action popular-list">${artist}</a>`
         ).appendTo("#popular-artists");
       }
     },
@@ -128,9 +133,11 @@ let getTopArtists = function() {
                    title : response.data.results[i].trackName.replace("''",""),
                    link : response.data.results[i].trackViewUrl,
                    album : response.data.results[i].collectionName,
+                   artworkUrl60 : response.data.results[i].artworkUrl60,
                }
                $(
-                `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${topTen[i].title}</a>`
+                `<div class="row individual-search-result"><a href="./profile.html?search=${topTen[i].title}" id="individual-song-title" class="text-dark">
+                <img src="${topTen[i].artworkUrl60}" class="album-thumbnail">${topTen[i].title}</a></div>`
               ).appendTo("#search-results");
            }
            console.log(response);

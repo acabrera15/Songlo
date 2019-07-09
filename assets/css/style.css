@@ -65,6 +65,15 @@ body {
     text-align:center;
 }
 
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background-color:transparent;
+    color:#FF9675;
+}
+
+.album-thumbnail {
+    margin-right:8px;
+}
+
 .social-icon {
     text-align:center;
     color:white;
@@ -73,6 +82,11 @@ body {
 .social-icon:hover {
     /* font-size:3em; */
     color:#FF9675;
+}
+
+/* Search results styling */
+.individual-search-result {
+    margin-bottom:4px;
 }
 
 .footer {
@@ -93,10 +107,7 @@ body {
     z-index:800;
 }
 
-.list-group-item-action:focus, .list-group-item-action:hover {
-    background-color:transparent;
-    color:#FF9675;
-}
+
 
 /* .popular-artists {
     border-right-style:solid;
