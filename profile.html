@@ -18,6 +18,7 @@
   integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
 
 <body>
+  <div class="profile-background">
 
   <div class="container-fluid profile-background">
     <div class="row">
@@ -30,7 +31,7 @@
             
 
             <h1 class="display-4">Get the lo down on that artist</h1>
-
+            <div class="col-md-12">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <a class="navbar-brand" href="#"><img src="assets/images/logo-songlo.png" ..alt="logo" style="float:left;width:50px;height:50px;">
               </a>
@@ -54,10 +55,10 @@
                       Music Links
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Spotify</a>
-                      <a class="dropdown-item" href="#">iTunes</a>
+                      <a class="dropDownSpotify" href="#">Spotify</a>
+                      <a class="dropDownItunes" href="#">iTunes</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Youtube</a>
+                      <a class="dropDownYoutube" href="#">Youtube</a>
                     </div>
                   </li>
                   <li class="nav-item">
@@ -70,6 +71,16 @@
                 </form>
               </div>
             </nav>
+            <div class="aYoutube">
+                <iframe width="560" height="315" src=" " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="card" 
+            style="width: 35rem;">
+              <img src="" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="artName">Name of artist</h5>
+                <p class="groupName">group name</p>
             <div class="card" style="width: 35rem;">
               <img src="" class="card-img-top bandImg mx-auto" style="max-height: 200px ;max-width:200px;" alt="">
               <div class="card-body">
@@ -81,6 +92,7 @@
                 <li class="list-group-item">
                   <div class="container">
                     <div class="row">
+                           
                       <div class="col-sm">
                         wiki
                       </div>
@@ -93,6 +105,10 @@
 
                 </li>
                 <li class="list-group-item">musix match here
+                  <div id="musixApi"></div>
+
+                </li>
+                <li class="musixMatch">musix match here
                   <div id="musixApi"></div>
 
 
