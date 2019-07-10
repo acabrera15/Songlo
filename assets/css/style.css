@@ -3,7 +3,12 @@ font-family: 'Ubuntu', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Maven Pro', sans-serif;
 font-family: 'Catamaran', sans-serif;
-font-family: 'Roboto Mono', monospace; */
+font-family: 'Roboto Mono', monospace;
+font-family: 'Cairo', sans-serif;
+font-family: 'Abel', sans-serif; */
+body {
+    font-family: 'Cairo', sans-serif;
+}
 
 .jumbotron {
     text-align: center;
@@ -24,7 +29,8 @@ font-family: 'Roboto Mono', monospace; */
 }
 
 .btn-primary:hover {
-    
+    background-color:#FF9675;
+    border-color:#FF9675;
 }
 
 .container-fluid {
@@ -66,7 +72,7 @@ font-family: 'Roboto Mono', monospace; */
 
 .social-icon:hover {
     /* font-size:3em; */
-    color:orange;
+    color:#FF9675;
 }
 
 .footer {
@@ -74,9 +80,29 @@ font-family: 'Roboto Mono', monospace; */
     padding-top:10px;
 }
 
+.profile-background {
+ text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color:rgb(255, 0, 140);
+    background-image: url(../images/gospel-concert-background-5.jpg);
+    padding-block-end: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 140%;   
+    z-index:800;
+}
+.artName {
+    font-family: 'Cairo', sans-serif;
+    color:rgb(255, 0, 140);
+}
+.groupName{
+    
+}
+
 .list-group-item-action:focus, .list-group-item-action:hover {
     background-color:transparent;
-    color:orange;
+    color:#FF9675;
 }
 
 /* .popular-artists {
