@@ -29,7 +29,7 @@ axios({
     console.error(err);
   });
 
-  
+
 const getBandInformationFromWiki = function(band) {
     console.log('test')
   let URL = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${band}&format=json&callback=?`;
