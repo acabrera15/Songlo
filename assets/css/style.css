@@ -8,6 +8,7 @@ font-family: 'Cairo', sans-serif;
 font-family: 'Abel', sans-serif; */
 body {
     font-family: 'Cairo', sans-serif;
+    
 }
 
 .jumbotron {
@@ -40,6 +41,14 @@ body {
 
 .search-box {
     text-align: center;
+}
+
+#submit-song-search {
+    margin-right:5px;
+}
+
+#home-seach-buttons {
+    margin-top:5px;
 }
 
 .fa-briefcase {
@@ -85,19 +94,23 @@ body {
     font-family: 'Quicksand', sans-serif;
     color:rgb(255, 0, 140);
     background-image: url(../images/gospel-concert-background-5.jpg);
-    padding-block-end: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 140%;   
-    z-index:800;
+    background-attachment: fixed;  
+}
+.card{
+margin-block-start: -320px;
+}
+.aYoutube{
+margin-left: 580px;
+margin-block-start: 50px;
 }
 .artName {
     font-family: 'Cairo', sans-serif;
     color:rgb(255, 0, 140);
 }
-.groupName{
-    
+.col-sm{
+color: black;
 }
 
 .list-group-item-action:focus, .list-group-item-action:hover {
