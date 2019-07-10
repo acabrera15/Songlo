@@ -1,6 +1,8 @@
 $(document).ready(function() {
 });
 
+// gets info from url parameters passed in from app.js functions 
+// these will be used to query more APIs (split into arrays and grab params as elements of array)
 function getArtistToQuery() {
   var params = location.search.substring(1).split("&");
   var song = params[0].split("=");
@@ -8,9 +10,11 @@ function getArtistToQuery() {
 
   return [song[1],artist[1]];
 }
-
+// replaces %20 with spaces for appearance sake
 var currentArtist = getArtistToQuery()[1];
 $(".artName").text(currentArtist.replace(/%20/g,' '));
+
+// axios command to link to itunes
 
 axios({
   url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
@@ -29,7 +33,7 @@ axios({
     console.error(err);
   });
 
-
+  // ajax command to get band info from wiki
 const getBandInformationFromWiki = function(band) {
     console.log('test')
   let URL = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${band}&format=json&callback=?`;
@@ -45,10 +49,12 @@ const getBandInformationFromWiki = function(band) {
     .then(function(response) {
       console.log(response);
       var artistInfoIndex = 0;
-
-      if (response[2][0] === `${band} may refer to:`) {
+      var bandTemp = band.replace(/%20/g,' ')
+      console.log(bandTemp);
+// filters object response if too generic looking for band response from wiki
+      if (response[2][0] === `${bandTemp} may refer to:`) {
         for (var i = 0; i < response[1].length; i++) {
-            if (response[1][i].includes("(band)")) {
+            if (response[1][i].includes("(band)")||response[1][i].includes("(musician)")||response[1][i].includes("(artist)")) {
                 artistInfoIndex = i;
                 break;
             }
