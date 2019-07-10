@@ -40,13 +40,26 @@ const getBandInformationFromWiki = function(band) {
     dataType: "json"
   })
     .then(function(response) {
-      console.log(response[2][0]);
-      bandInfo = response[2][0];
+      console.log(response);
+      var artistInfoIndex = 0;
+
+      if (response[2][0] === `${band} may refer to:`) {
+        for (var i = 0; i < response[1].length; i++) {
+            if (response[1][i].includes("(band)")) {
+                artistInfoIndex = i;
+                break;
+            }
+        }
+        console.log(response[2][artistInfoIndex])
+      } else {
+        bandInfo = response[2][0];
+        console.log(bandInfo)
+      }
+
     })
     .catch(function(err) {
       console.log(err);
     });
-  return bandInfo;
 };
 
 console.log(getBandInformationFromWiki(currentArtist));
