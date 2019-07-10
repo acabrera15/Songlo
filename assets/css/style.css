@@ -42,6 +42,14 @@ body {
     text-align: center;
 }
 
+#submit-song-search {
+    margin-right:5px;
+}
+
+#home-seach-buttons {
+    margin-top:5px;
+}
+
 .fa-briefcase {
     margin-right:5px;
 }
