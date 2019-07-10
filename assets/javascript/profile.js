@@ -50,10 +50,13 @@ const getBandInformationFromWiki = function(band) {
                 break;
             }
         }
+        bandInfo = response[2][artistInfoIndex];
         console.log(response[2][artistInfoIndex])
+        $('<p>').text(bandInfo).appendTo('.wikiInfo');
       } else {
         bandInfo = response[2][0];
         console.log(bandInfo)
+        $('<p>').text(bandInfo).appendTo('.wikiInfo');
       }
 
     })
