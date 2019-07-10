@@ -177,7 +177,7 @@ $("#submit-song-search").on("click", function(e) {
           `<div class="row individual-search-result"><div class="col-md-1"><a href="./profile.html?artist=${topTen[i].artist}">
           <img src="${topTen[i].artworkUrl60}" class="album-thumbnail"></a></div>
           <div class="col-md-10 text-dark"><a href="./profile.html?artist=${topTen[i].artist}">${topTen[i].title}</a>
-          <p>by: ${topTen[i].artist}</p><p>album : ${topTen[i].album}</p></div></div>`
+          <div>by: ${topTen[i].artist}</div><div>album : ${topTen[i].album}</div></div></div>`
         ).appendTo("#search-results");
       }
       console.log(response);
