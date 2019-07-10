@@ -101,7 +101,7 @@ let getTopArtists = function() {
         // console.log("----------------");
 
         $(
-          `<a href="./profile.html?artist=${artist}" id='topArtistLink' class="list-group-item list-group-item-action popular-list" target="_blank">${artist}</a>`
+          `<a href="./profile.html?artist=${artist}" id='topArtistLink' class="list-group-item list-group-item-action popular-list">${artist}</a>`
         ).appendTo("#popular-artists");
       }
     },
