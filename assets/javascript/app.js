@@ -114,36 +114,36 @@ let getTopArtists = function() {
 };
 
 // on click search of artist gets top ten songs by that artists on itunes api
-  $('#submit').on('click',function(e){
-    e.preventDefault();
-    console.log('clicked');
-    const searchTerm = $("#search-input").val().trim();
-        axios({
-            url: `https://itunes.apple.com/search?term=${searchTerm}&limit=30`,
-            method:"GET",
-        })
-       .then(function(response){
-        console.log(response);
-           var topTen = [];
-           for (var i=0;i<10;i++){
-               topTen[i] = {
-                   title : response.data.results[i].trackName.replace("''",""),
-                   link : response.data.results[i].trackViewUrl,
-                   album : response.data.results[i].collectionName,
-               }
-               $(
-                `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${topTen[i].title}</a>`
-              ).appendTo("#search-results");
-           }
-           console.log(response);
-          console.log(topTen);
-          $("#search-input").val("");
-       }) 
-       .catch(function (err) {
-                    console.error(err)
-                })
-    
-
-    
-  });
-
+$("#submit").on("click", function(e) {
+  e.preventDefault();
+  console.log("clicked");
+  const searchTerm = $("#search-input")
+    .val()
+    .trim();
+  axios({
+    url: `https://itunes.apple.com/search?term=${searchTerm}&limit=30`,
+    method: "GET"
+  })
+    .then(function(response) {
+      console.log(response);
+      var topTen = [];
+      for (var i = 0; i < 10; i++) {
+        topTen[i] = {
+          title: response.data.results[i].trackName.replace("''", ""),
+          link: response.data.results[i].trackViewUrl,
+          album: response.data.results[i].collectionName
+        };
+        $(
+          `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${
+            topTen[i].title
+          }</a>`
+        ).appendTo("#search-results");
+      }
+      console.log(response);
+      console.log(topTen);
+      $("#search-input").val("");
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+});
