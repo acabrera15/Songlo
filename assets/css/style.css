@@ -22,6 +22,9 @@ body {
     background-color: #582C07; /* Used if the image is unavailable */
     z-index:800;
 }
+.logo{
+    margin-top:1px;
+}
 
 .btn-primary {
     background-color:#A263D6;
