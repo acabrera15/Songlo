@@ -1,121 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Songlo Home Page</title>
-    <script src="https://kit.fontawesome.com/9df1549440.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Catamaran|Maven+Pro|Quicksand|Roboto+Mono|Ubuntu|Abel|Cairo&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
-    integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk="
-    crossorigin="anonymous"
-  ></script>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Get the lo down on that artist</h1>
-              <p class="lead">Search for a song or artist</p>
-              <div class="row justify-content-md-center">
-                <form class="form-inline">
-                  <div class="form-group mb-2 search-box">
-                    <label for="searchinput" class="col-md-4"></label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="search-input"
-                      placeholder="Search here"
-                    />
-                  </div>
-                  <input
-                    type="submit"
-                    class="btn btn-primary mb-2"
-                    id="submit"
-                    value="Search"
-                  />
-                </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Songlo Home Page</title>
+  <script src="https://kit.fontawesome.com/9df1549440.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Catamaran|Maven+Pro|Quicksand|Roboto+Mono|Ubuntu|Abel|Cairo&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
+  integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Get the lo down on that artist</h1>
+            <p class="lead">Search for a song or artist</p>
+            <div class="row justify-content-md-center">
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="search-input" placeholder="Search here" />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12" id="search-results">**Search div here**</div>
-        </div>
-      </div>
-      <div class="container-fluid footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="list-group">
-                <p class="list-group-item active list-title">
-                  Most Popular Songs
-                </p>
-                <div id="popular-songs">
-                  <!-- <a href="#" class="list-group-item list-group-item-action popular-list">Dapibus ac facilisis in</a> -->
-                </div>
-              </div>
+            <div class="row justify-content-md-center" id="home-seach-buttons">
+              <input type="submit" class="btn btn-primary mb-2" id="submit-song-search" value="Search by Song" />
+              <input type="submit" class="btn btn-primary mb-2" id="submit-artist-search" value="Search by Artist" />
             </div>
-            <div class="col-md-4">
-              <div class="list-group">
-                <p class="list-group-item active list-title">
-                  Most Popular Artists
-                </p>
-                <div id="popular-artists">
-                  <!-- <a href="#" class="list-group-item list-group-item-action popular-list">Dapibus ac facilisis in</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="list-group">
-                <p class="list-group-item active list-title">
-                  Other Links
-                </p>
-                <a href="#" class="list-group-item list-group-item-action"
-                  ><i class="fas fa-briefcase fa-sm"></i>Careers</a
-                >
-                <p class="list-group-item">
-                  Connect with us!
-                </p>
-                <i
-                  class="fab fa-facebook fa-2x list-group-item social-icon"
-                ></i>
-                <i
-                  class="fab fa-instagram fa-2x list-group-item social-icon"
-                ></i>
-                <i class="fab fa-twitter fa-2x list-group-item social-icon"></i>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script src="./assets/javascript/app.js"></script>
-  <script src="https://apis.google.com/js/client.js?onload=init"></script>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="search-results"></div>
+    </div>
+  </div>
+  <div class="container-fluid footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="list-group">
+            <p class="list-group-item active list-title">
+              Most Popular Songs
+            </p>
+            <div id="popular-songs">
+              <!-- <a href="#" class="list-group-item list-group-item-action popular-list">Dapibus ac facilisis in</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="list-group">
+            <p class="list-group-item active list-title">
+              Most Popular Artists
+            </p>
+            <div id="popular-artists">
+              <!-- <a href="#" class="list-group-item list-group-item-action popular-list">Dapibus ac facilisis in</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="list-group">
+            <p class="list-group-item active list-title">
+              Other Links
+            </p>
+            <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-briefcase fa-sm"></i>Careers</a>
+            <p class="list-group-item">
+              Connect with us!
+            </p>
+            <i class="fab fa-facebook fa-2x list-group-item social-icon"></i>
+            <i class="fab fa-instagram fa-2x list-group-item social-icon"></i>
+            <i class="fab fa-twitter fa-2x list-group-item social-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<script src="./assets/javascript/app.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+
 </html>
