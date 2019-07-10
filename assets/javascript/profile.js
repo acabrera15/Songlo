@@ -10,7 +10,7 @@ function getArtistToQuery() {
 }
 
 var currentArtist = getArtistToQuery();
-$(".artName").text(currentArtist);
+$(".artName").text(currentArtist.replace('%20',' '));
 
 axios({
   url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
