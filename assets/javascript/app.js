@@ -37,7 +37,7 @@ $(document).ready(function() {
   getTopTenSongs();
   getTopArtists();
 });
-
+// gets top ten songs from musixmatch api
 let getTopTenSongs = function() {
   $.ajax({
     type: "GET",
@@ -76,7 +76,7 @@ let getTopTenSongs = function() {
     }
   });
 };
-
+// get top ten artists from musixmatch API
 let getTopArtists = function() {
   $.ajax({
     type: "GET",
@@ -112,7 +112,7 @@ let getTopArtists = function() {
     }
   });
 };
-
+// on click search of artist gets top ten songs by that artists on itunes api
   $('#submit').on('click',function(e){
     e.preventDefault();
     console.log('clicked');
@@ -122,6 +122,7 @@ let getTopArtists = function() {
             method:"GET",
         })
        .then(function(response){
+        console.log(response);
            var topTen = [];
            for (var i=0;i<10;i++){
                topTen[i] = {
