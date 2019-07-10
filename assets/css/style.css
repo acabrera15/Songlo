@@ -74,21 +74,6 @@ font-family: 'Roboto Mono', monospace; */
     padding-top:10px;
 }
 
-<<<<<<< HEAD
-.profile-background {
- text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    color:rgb(255, 0, 140);
-    background-image: url(../images/gospel-concert-background-5.jpg);
-    padding-block-end: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 50% 140%;   
-    z-index:800;
-}
-
-=======
 .list-group-item-action:focus, .list-group-item-action:hover {
     background-color:transparent;
     color:orange;
@@ -100,5 +85,4 @@ font-family: 'Roboto Mono', monospace; */
     border-right-width:1px;
 } */
 
->>>>>>> 5ff0344820918d8d3d7a011110a585121cc49c8e
 
