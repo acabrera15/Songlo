@@ -10,7 +10,7 @@ function getArtistToQuery() {
 }
 
 var currentArtist = getArtistToQuery();
-$(".artName").text(currentArtist);
+$(".artName").text(currentArtist.replace('%20',' '));
 
 axios({
   url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
@@ -21,6 +21,9 @@ axios({
     var tempStore = response.data.results[0].artistViewUrl;
     $(".iLink").attr("href", tempStore);
     $(".iLink").attr("target", "_blank");
+    $(".bandImg").attr("src", response.data.results[0].artworkUrl100);
+    
+    console.log(response)
   })
   .catch(function(err) {
     console.error(err);
@@ -40,13 +43,29 @@ const getBandInformationFromWiki = function(band) {
     dataType: "json"
   })
     .then(function(response) {
-      console.log(response[2][0]);
-      bandInfo = response[2][0];
+      console.log(response);
+      var artistInfoIndex = 0;
+
+      if (response[2][0] === `${band} may refer to:`) {
+        for (var i = 0; i < response[1].length; i++) {
+            if (response[1][i].includes("(band)")) {
+                artistInfoIndex = i;
+                break;
+            }
+        }
+        bandInfo = response[2][artistInfoIndex];
+        console.log(response[2][artistInfoIndex])
+        $('<p>').text(bandInfo).appendTo('.wikiInfo');
+      } else {
+        bandInfo = response[2][0];
+        console.log(bandInfo)
+        $('<p>').text(bandInfo).appendTo('.wikiInfo');
+      }
+
     })
     .catch(function(err) {
       console.log(err);
     });
-  return bandInfo;
 };
 
 console.log(getBandInformationFromWiki(currentArtist));
