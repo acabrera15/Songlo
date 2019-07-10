@@ -133,10 +133,11 @@ $("#submit-artist-search").on("click", function(e) {
           title: response.data.results[i].trackName.replace("''", ""),
           link: response.data.results[i].trackViewUrl,
           album: response.data.results[i].collectionName,
-          artworkUrl60 : response.data.results[i].artworkUrl60
+          artworkUrl60 : response.data.results[i].artworkUrl60,
+          artistName: response.data.results[i].artistName
         };
         $(
-          `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${
+          `<a href="./profile.html?song=${topTen[i].title}&artist=${topTen[i].artistName}" class="list-group-item text-dark list-group-item-action popular-list">${
             topTen[i].title
           }</a>`
         ).appendTo("#search-results");
