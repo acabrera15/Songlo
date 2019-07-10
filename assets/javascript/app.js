@@ -132,7 +132,8 @@ $("#submit-artist-search").on("click", function(e) {
         topTen[i] = {
           title: response.data.results[i].trackName.replace("''", ""),
           link: response.data.results[i].trackViewUrl,
-          album: response.data.results[i].collectionName
+          album: response.data.results[i].collectionName,
+          artworkUrl60 : response.data.results[i].artworkUrl60
         };
         $(
           `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${
@@ -170,11 +171,13 @@ $("#submit-song-search").on("click", function(e) {
           title: response.data.results[i].trackName.replace("''", ""),
           artist: response.data.results[i].artistName,
           album: response.data.results[i].collectionName,
+          artworkUrl60 : response.data.results[i].artworkUrl60
         };
         $(
-          `<a href="./profile.html" class="list-group-item text-dark list-group-item-action popular-list">${
-            topTen[i].title
-          } by <div>${topTen[i].artist} album : ${topTen[i].album}</div></a>`
+          `<div class="row individual-search-result"><div class="col-md-1"><a href="./profile.html?artist=${topTen[i].artist}">
+          <img src="${topTen[i].artworkUrl60}" class="album-thumbnail"></a></div>
+          <div class="col-md-10 text-dark"><a href="./profile.html?artist=${topTen[i].artist}">${topTen[i].title}</a>
+          <p>by: ${topTen[i].artist}</p><p>album : ${topTen[i].album}</p></div></div>`
         ).appendTo("#search-results");
       }
       console.log(response);
