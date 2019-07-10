@@ -2,15 +2,15 @@ $(document).ready(function() {
 });
 
 function getArtistToQuery() {
-  var artist = location.search.substring(1).split("&");
-  var temp = artist[0].split("=");
-  var currentArtist = temp[1];
+  var params = location.search.substring(1).split("&");
+  var song = params[0].split("=");
+  var artist = params[1].split("=");
 
-  return currentArtist;
+  return [song[1],artist[1]];
 }
 
-var currentArtist = getArtistToQuery();
-$(".artName").text(currentArtist.replace('%20',' '));
+var currentArtist = getArtistToQuery()[1];
+$(".artName").text(currentArtist.replace(/%20/g,' '));
 
 axios({
   url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
