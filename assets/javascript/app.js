@@ -140,10 +140,15 @@ $("#submit-artist-search").on("click", function(e) {
           artworkUrl60 : response.data.results[i].artworkUrl60,
           artistName: response.data.results[i].artistName
         };
+        // $(
+        //   `<a href="./profile.html?song=${topTen[i].title}&artist=${topTen[i].artistName}" class="list-group-item text-dark list-group-item-action popular-list">${
+        //     topTen[i].title
+        //   }</a>`
         $(
-          `<a href="./profile.html?song=${topTen[i].title}&artist=${topTen[i].artistName}" class="list-group-item text-dark list-group-item-action popular-list">${
-            topTen[i].title
-          }</a>`
+          `<div class="row individual-search-result"><div class="col-md-1"><a href="./profile.html?song=${topTen[i].title}&artist=${topTen[i].artistName}">
+          <img src="${topTen[i].artworkUrl60}" class="album-thumbnail"></a></div>
+          <div class="col-md-10 text-dark"><a href="./profile.html?song=${topTen[i].title}&artist=${topTen[i].artistName}">${topTen[i].title}</a>
+          <div>album : ${topTen[i].album}</div></div></div>`
         ).appendTo("#search-results");
       }
       console.log(response);

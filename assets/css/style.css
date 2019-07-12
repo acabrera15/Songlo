@@ -8,6 +8,7 @@ font-family: 'Cairo', sans-serif;
 font-family: 'Abel', sans-serif; */
 body {
   font-family: "Cairo", sans-serif;
+  background-color:#ff9675;
 }
 
 .jumbotron {
@@ -21,12 +22,17 @@ body {
   background-position: 50% 140%;
   background-color: #582c07; /* Used if the image is unavailable */
   z-index: 800;
+  margin-bottom:0;
 }
 
 .tag-line, .artName {
     text-align: center;
     font-family: "Quicksand", sans-serif;
     color: rgb(255, 0, 140);
+}
+
+.logo-section {
+    text-align:center;
 }
 
 .logo {
@@ -58,6 +64,14 @@ body {
 
 #home-seach-buttons {
   margin-top: 5px;
+}
+
+.search-results-container {
+    background-color:white;
+}
+
+.individual-search-result {
+    margin-bottom:6px
 }
 
 .album-thumbnail {
@@ -126,6 +140,27 @@ body {
     text-align:center;
     padding:3rem;
 }
+
+.artist-image-here {
+    text-align:center;
+    width:70%;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.fa-itunes {
+    color:black;
+    margin-right:5px;
+    font-size: 24px;
+}
+
+.itunes-link {
+    margin-bottom:5px;
+}
+
+/* .bandImg {
+    text-align:center;
+} */
 
 /* .popular-artists {
     border-right-style:solid;
