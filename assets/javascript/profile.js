@@ -12,6 +12,7 @@ function getArtistToQuery() {
 }
 // replaces %20 with spaces for appearance sake
 var currentArtist = getArtistToQuery()[1];
+var currentSong = getArtistToQuery()[0];
 $(".artName").text(currentArtist.replace(/%20/g,' '));
 // if (currentArtist.includes('feat.')) {
 //   currentArtist = currentArtist.split("feat.")[0];
@@ -19,7 +20,7 @@ $(".artName").text(currentArtist.replace(/%20/g,' '));
 // }
 console.log('currentArtist: ' + currentArtist.trim())
 axios({
-  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
+  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=1`,
   method: "GET",
 })
   .then(function(response) {
@@ -75,8 +76,11 @@ const getBandInformationFromWiki = function(band) {
       console.log(err);
     });
 };
+// if clicked on artist gets artist page
 
-console.log(getBandInformationFromWiki(currentArtist));
+if (currentSong==='_'){
+getBandInformationFromWiki(currentArtist)
+}
 
 const getMusicInfo = function() {
   $.ajax({
