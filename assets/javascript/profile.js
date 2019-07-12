@@ -1,5 +1,4 @@
-$(document).ready(function() {
-});
+
 
 // gets info from url parameters passed in from app.js functions 
 // these will be used to query more APIs (split into arrays and grab params as elements of array)
@@ -14,10 +13,10 @@ function getArtistToQuery() {
 var currentArtist = getArtistToQuery()[1];
 var currentSong = getArtistToQuery()[0];
 
-// if (currentArtist.includes('feat.')) {
-//   currentArtist = currentArtist.split("feat.")[0];
+if (currentArtist.includes('feat.')) {
+  currentArtist = currentArtist.split("feat.")[0];
 
-// }
+}
 console.log('currentArtist: ' + currentArtist.trim())
 axios({
   url: `https://itunes.apple.com/search?term=${currentArtist}&limit=10`,
@@ -142,3 +141,6 @@ if (currentSong==='_'){
     e.preventDefault();
     location.replace(`./profile.html?song=_&artist=${$('#textInput').val()}`)
   });
+
+
+
