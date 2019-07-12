@@ -76,7 +76,7 @@ const getBandInformationFromWiki = function(band) {
     });
 };
 
-console.log(getBandInformationFromWiki(currentArtist));
+getBandInformationFromWiki(currentArtist);
 
 const getMusicInfo = function() {
   $.ajax({
@@ -94,24 +94,24 @@ const getMusicInfo = function() {
       console.log(err);
     });
 };
-
-function getLyrics() {
+// https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=Enter%20Sandman&q_artist=metallica&apikey=04e49b29533147d52143a4ef842fa260
+function getLyrics(band, song) {
   $.ajax({
     type: "GET",
     data: {
       apikey: "04e49b29533147d52143a4ef842fa260",
-      chart_name: "top",
-      page: "1",
-      page_size: "10",
+      q_track: song,
+      q_artist: band,
       format: "jsonp",
       callback: "jsonp_callback"
     },
-    url: "https://api.musixmatch.com/ws/1.1/chart.tracks.get",
+    url: "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get",
     dataType: "jsonp",
     jsonpCallback: "jsonp_callback",
     contentType: "application/json",
     success: function(data) {
-      console.log(data);
+      console.log(data.message.body.lyrics.lyrics_body);
+      $("#musixTrack").attr('src', data.message.body.lyrics.script_tracking_url)
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log(jqXHR);
@@ -120,3 +120,4 @@ function getLyrics() {
     }
   });
 }
+

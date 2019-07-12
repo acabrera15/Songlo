@@ -122,7 +122,7 @@ $("#submit-artist-search").on("click", function(e) {
     .val()
     .trim();
   axios({
-    url: `https://itunes.apple.com/search?term=${searchTerm}&limit=30`,
+    url: `https://itunes.apple.com/search?term=${searchTerm}&limit=10`,
     method: "GET"
   })
     .then(function(response) {
