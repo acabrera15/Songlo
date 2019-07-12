@@ -19,7 +19,7 @@ $(".artName").text(currentArtist.replace(/%20/g,' '));
 // }
 console.log('currentArtist: ' + currentArtist.trim())
 axios({
-  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=30`,
+  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=1`,
   method: "GET",
 })
   .then(function(response) {
