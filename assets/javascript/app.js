@@ -122,10 +122,14 @@ $("#submit-artist-search").on("click", function(e) {
     .val()
     .trim();
   axios({
-    url: `https://itunes.apple.com/search?term=${searchTerm}&limit=30`,
+    url: `https://itunes.apple.com/search?term=${searchTerm}&limit=10`,
     method: "GET"
   })
     .then(function(response) {
+      var artist= response.data.results[0].artistName
+     $(`<a href="./profile.html?song=_&artist=${artist}" style="text-decoration: underline;" class="list-group-item text-dark list-group-item-action popular-list">Artist:  ${
+       artist
+     }</a>`).appendTo('#search-results');
       console.log(response);
       var topTen = [];
       for (var i = 0; i < 10; i++) {

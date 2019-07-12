@@ -12,14 +12,15 @@ function getArtistToQuery() {
 }
 // replaces %20 with spaces for appearance sake
 var currentArtist = getArtistToQuery()[1];
-$(".artName").text(currentArtist.replace(/%20/g,' '));
+var currentSong = getArtistToQuery()[0];
+
 // if (currentArtist.includes('feat.')) {
 //   currentArtist = currentArtist.split("feat.")[0];
 
 // }
 console.log('currentArtist: ' + currentArtist.trim())
 axios({
-  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=1`,
+  url: `https://itunes.apple.com/search?term=${currentArtist}&limit=10`,
   method: "GET",
 })
   .then(function(response) {
@@ -76,8 +77,6 @@ const getBandInformationFromWiki = function(band) {
     });
 };
 
-console.log(getBandInformationFromWiki(currentArtist));
-
 const getMusicInfo = function() {
   $.ajax({
     url:
@@ -94,24 +93,25 @@ const getMusicInfo = function() {
       console.log(err);
     });
 };
-
-function getLyrics() {
+// https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=Enter%20Sandman&q_artist=metallica&apikey=04e49b29533147d52143a4ef842fa260
+function getLyrics(band, song) {
   $.ajax({
     type: "GET",
     data: {
       apikey: "04e49b29533147d52143a4ef842fa260",
-      chart_name: "top",
-      page: "1",
-      page_size: "10",
+      q_track: song,
+      q_artist: band,
       format: "jsonp",
       callback: "jsonp_callback"
     },
-    url: "https://api.musixmatch.com/ws/1.1/chart.tracks.get",
+    url: "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get",
     dataType: "jsonp",
     jsonpCallback: "jsonp_callback",
     contentType: "application/json",
     success: function(data) {
-      console.log(data);
+      console.log(data.message.body.lyrics.lyrics_body);
+      $("#musixTrack").attr('src', data.message.body.lyrics.script_tracking_url)
+      $('<p>').text(data.message.body.lyrics.lyrics_body).appendTo('.wikiInfo');
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log(jqXHR);
@@ -120,3 +120,17 @@ function getLyrics() {
     }
   });
 }
+
+// if clicked on artist gets artist page else gets lyrics for song page and displays song by band
+
+if (currentSong==='_'){
+  $(".artName").text(currentArtist.replace(/%20/g,' '));
+  getBandInformationFromWiki(currentArtist)
+  }else{
+    var cArt = currentArtist.replace(/%20/g,' ');
+    var cSong = currentSong.replace(/%20/g,' ');
+    $(".artName").text(`${cSong} by ${cArt}`);
+    getLyrics(currentArtist,currentSong);
+  }
+  
+
