@@ -132,10 +132,10 @@ if (currentSong==='_'){
     $(".artName").text(`${cSong} by ${cArt}`);
     getLyrics(currentArtist,currentSong);
   }
-  
+
   $("#submit-song-search2").on('click', function(e) {
     e.preventDefault();
-    location.replace(`./profile.html?song=_&artist=${$('#textInput').val()}`)
+    // location.replace(`./profile.html?song=_&artist=${$('#textInput').val()}`)
   });
 
   $("#submit-artist-search").on('click', function(e) {
