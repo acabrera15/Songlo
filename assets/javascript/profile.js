@@ -133,4 +133,12 @@ if (currentSong==='_'){
     getLyrics(currentArtist,currentSong);
   }
   
+  $("#submit-song-search2").on('click', function(e) {
+    e.preventDefault();
+    location.replace(`./profile.html?song=_&artist=${$('#textInput').val()}`)
+  });
 
+  $("#submit-artist-search").on('click', function(e) {
+    e.preventDefault();
+    location.replace(`./profile.html?song=_&artist=${$('#textInput').val()}`)
+  });
