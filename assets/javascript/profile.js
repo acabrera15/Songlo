@@ -94,42 +94,6 @@ const getMusicInfo = function () {
     });
 };
 
-//youtube API here
-function getMusicVideo () {
-  console.log("begin youtube function")
-  gapi.client.setApiKey("AIzaSyA7qkLvUXJLWyyZl97iOw5z7VNDjMzlh40");
-  gapi.client.load("youtube", "v3", function () {
-    // prepare the request
-    var request = gapi.client.youtube.search.list({
-
-      part: "snippet",
-      type: "video",
-      q: encodeURIComponent($(currentArtist).val()).replace(/%20/g, "+"),
-      q: $(currentArtist),
-      maxResults: 1,
-      order: "viewCount"
-    });
-    //execute this request
-    request.execute(function (response) {
-      var results = response.result;
-      console.log("in the youtube function")
-      $.each(results.items, function (index, item) {
-        console.log(item);
-        $("#videos-display-here").html(
-          "<iframe id='player' type='text/html' width='640' height='390' src='https://www.youtube.com/embed/" +
-          item.id.videoId + "?enablejsapi=1&origin=http://example.com' frameborder='0'></iframe>"
-        );
-      });
-    });
-  });
-};
-getMusicVideo();
-// function init() {
-//   gapi.client.setApiKey("AIzaSyA7qkLvUXJLWyyZl97iOw5z7VNDjMzlh40");
-//   gapi.client.load("youtube", "v3", function() {
-//     // yt api is ready
-//   });
-// }
 
 // https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=Enter%20Sandman&q_artist=metallica&apikey=04e49b29533147d52143a4ef842fa260
 function getLyrics(band, song) {
