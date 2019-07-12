@@ -104,7 +104,7 @@ function getMusicVideo () {
 
       part: "snippet",
       type: "video",
-      // q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+      q: encodeURIComponent($(currentArtist).val()).replace(/%20/g, "+"),
       q: $(currentArtist),
       maxResults: 1,
       order: "viewCount"
