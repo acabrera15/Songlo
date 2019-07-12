@@ -29,7 +29,7 @@ axios({
     $(".iLink").attr("target", "_blank");
     $(".bandImg").attr("src", response.data.results[0].artworkUrl100);
     
-    console.log(response)
+    console.log(response);
   })
   .catch(function(err) {
     console.error(err);

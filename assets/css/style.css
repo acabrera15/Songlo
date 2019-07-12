@@ -22,6 +22,13 @@ body {
   background-color: #582c07; /* Used if the image is unavailable */
   z-index: 800;
 }
+
+.tag-line, .artName {
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    color: rgb(255, 0, 140);
+}
+
 .logo {
   margin-top: 1px;
 }
@@ -80,6 +87,12 @@ body {
   text-align: center;
 }
 
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+  background-color: transparent;
+  color: #ff9675;
+}
+
 .social-icon {
   text-align: center;
   color: white;
@@ -95,34 +108,23 @@ body {
   padding-top: 10px;
 }
 
-.profile-background {
-  text-align: center;
-  font-family: "Quicksand", sans-serif;
-  color: rgb(255, 0, 140);
+.content-body {
+    background-color:white;
+    margin-top:10px;
+}
+
+#profile-page-body {
   background-image: url(../images/gospel-concert-background-5.jpg);
+  background-color:black;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-.card {
-  margin-block-start: -320px;
-}
-.aYoutube {
-  margin-left: 580px;
-  margin-block-start: 50px;
-}
-.artName {
-  font-family: "Cairo", sans-serif;
-  color: rgb(255, 0, 140);
-}
-.col-sm {
-  color: black;
+  margin:auto;
 }
 
-.list-group-item-action:focus,
-.list-group-item-action:hover {
-  background-color: transparent;
-  color: #ff9675;
+.profile-left-area {
+    text-align:center;
+    padding:3rem;
 }
 
 /* .popular-artists {

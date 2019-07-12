@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Songlo Home Page</title>
   <link href="https://fonts.googleapis.com/css?family=Catamaran|Maven+Pro|Quicksand|Roboto+Mono|Ubuntu&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -17,107 +17,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
   integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
 
-<body>
+<body id="profile-page-body">
   <div class="profile-background">
-
-  <div class="container-fluid profile-background">
     <div class="row">
-      <div class="col-md-12">
-        <div class="profile">
-          <div class="container">
-            
-
-            <h1 class="display-4">Get the lo down on that artist</h1>
-            <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#"><img src="assets/images/logo-songlo.png" ..alt="logo" style="float:left;width:50px;height:50px;">
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Popular music</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Music Links
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropDownSpotify" href="#">Spotify</a>
-                      <a class="dropDownItunes" href="#">iTunes</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropDownYoutube" href="#">Youtube</a>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Random</a>
-                  </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-              </div>
-            </nav>
-            <div class="aYoutube">
-                <iframe width="560" height="315" src=" " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-
-            <div class="card" style="width: 35rem;">
-              <img src="" class="card-img-top bandImg mx-auto" style="max-height: 200px ;max-width:200px;" alt="">
-              <div class="card-body">
-                <h5 class="card-title artName">Name of artist</h5>
-                <p class="card-text wikiInfo"></p>
-              </div>
-              <div id="wikiApi"></div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <div class="container">
-                    <div class="row">
-                           
-                      <div class="col-sm">
-                        wiki
-                      </div>
-                      <div class="col-sm">
-                        wiki
-                      </div>
-                    </div>
-
-
-
-                </li>
-                <li class="list-group-item">musix match here
-                  <div id="musixApi"></div>
-
-                </li>
-                <li class="musixMatch">musix match here
-                  <div id="musixApi"></div>
-
-
-
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="#" class="card-link iLink">itunes link</a>
-                <a href="#" class="card-link">bands in town</a>
-              </div>
-            </div>
+      <div class="container-fluid">
+        <h1 class="display-4 tag-line">Get the lo down on that artist</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"><img src="assets/images/logo-songlo.png" ..alt="logo"
+              style="float:left;width:50px;height:50px;" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <input type="submit" class="btn btn-primary mb-2" id="submit-song-search" value="Search by Song" />
+              <input type="submit" class="btn btn-primary mb-2" id="submit-artist-search" value="Search by Artist" />
+            </form>
           </div>
-
+        </nav>
       </div>
     </div>
-  </div>
-  </div>
+    <div class="container content-body">
+      <div class="row">
+        <div class="col-md-6 profile-left-area">
+          <div class="row">
+            <div class="bandImg">
+                <!-- <img src="" class="card-img-top bandImg mx-auto" style="max-height: 200px ;max-width:200px;" alt=""> -->
+            </div>
+          </div>
+          <h5 class="artName"></h5>
+          <p class="groupName"></p>
+          <p class="wikiInfo"></p>
+          <div id="wikiApi"></div>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="youtube-video"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class ="artist-lyrics"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 <script src="https://apis.google.com/js/client.js?onload=init"></script>
