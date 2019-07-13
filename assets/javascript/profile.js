@@ -101,12 +101,15 @@ const getMusicInfo = function() {
 
 // https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=Enter%20Sandman&q_artist=metallica&apikey=04e49b29533147d52143a4ef842fa260
 function getLyrics(band, song) {
+  var bandTemp = band.replace(/%20/g, " ");
+  bandTemp.trim();
+  var songTemp = song.replace(/%20/g, " ");
   $.ajax({
     type: "GET",
     data: {
       apikey: "04e49b29533147d52143a4ef842fa260",
-      q_track: song,
-      q_artist: band,
+      q_track: songTemp.trim(),
+      q_artist: bandTemp.trim(),
       format: "jsonp",
       callback: "jsonp_callback"
     },
@@ -115,6 +118,7 @@ function getLyrics(band, song) {
     jsonpCallback: "jsonp_callback",
     contentType: "application/json",
     success: function(data) {
+      console.log("current" + data)
       console.log(data.message.body.lyrics.lyrics_body);
       $("#musixTrack").attr(
         "src",
