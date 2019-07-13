@@ -155,6 +155,7 @@ $("#submit-artist-search").on("click", function(e) {
 });
 
 var getYoutubeVideoAndOutputToDocument = function(song) {
+  console.log("song:" + song)
   $.ajax({
     type: "GET",
     data: {
