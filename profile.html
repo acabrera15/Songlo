@@ -38,7 +38,8 @@
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-              <input id='textInput' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <input id='textInput' class="form-control mr-sm-2" type="search" placeholder="Search"
+                aria-label="Search" />
               <input type="submit" class="btn btn-primary mb-2" id="submit-song-search2" value="Search by Song" />
               <input type="submit" class="btn btn-primary mb-2" id="submit-artist-search" value="Search by Artist" />
             </form>
@@ -52,29 +53,32 @@
         <div class="col-md-6 profile-left-area">
           <div class="row">
             <div class="artist-image-here">
-                <img src="" class="card-img-top bandImg mx-auto" alt="">
+              <img src="" class="card-img-top bandImg mx-auto" alt="">
             </div>
           </div>
           <h5 class="artName"></h5>
           <p class="groupName"></p>
           <div class="row itunes-link">
-            <dic class="col-md-12">
-                <a href="#" class="iLink fab fa-itunes"></a><a href="#" class="iLink">view on iTunes</a>
-            </dic>
+            <div class="col-md-12">
+              <a href="#" class="iLink fab fa-itunes"></a><a href="#" class="iLink">view on iTunes</a>
+            </div>
           </div>
           <p class="wikiInfo"></p>
           <div id="wikiApi"></div>
         </div>
-        <div class="col-md-6"></div>
-        <div class="youtube-video"></div>
+        <div class="col-md-6 pt-5">
+          <!-- <div class="you"> -->
+          <iframe height="60%" width="100%" src="https://www.youtube.com/embed/viimfQi_pUw" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- </div> -->
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class ="artist-lyrics"></div>
+          <div class="artist-lyrics"></div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 <script src="https://apis.google.com/js/client.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -83,7 +87,11 @@
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<<<<<<< HEAD
   <script id="musixTrack" type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+=======
+<script id="musixTrack" type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+>>>>>>> 00b71cd1fce7b01453ef8e329a0726aadf70d1eb
 
 <script src="./assets/javascript/profile.js"></script>
 
