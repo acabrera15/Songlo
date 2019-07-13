@@ -203,4 +203,4 @@ var getYoutubeVideoAndOutputToDocument = function(song) {
   });
 };
 
-getYoutubeVideoAndOutputToDocument(currentArtist)
+// getYoutubeVideoAndOutputToDocument(currentArtist)
